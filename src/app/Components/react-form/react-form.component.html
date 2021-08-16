@@ -1,1 +1,30 @@
-<p>react-form works!</p>
+<div class="d-md-flex mt-5 justify-content-center align-items-center" >
+<form [formGroup]="reactForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="Email">Email:</label>
+      <input type="email" class="form-control" formControlName="email"  [ngClass]="{'alert alert-danger':reactForm.get('email')?.errors &&(reactForm.get('email')?.touched || reactForm.get('email')?.dirty)}" name="email" placeholder="Enter email" required>
+      
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control"  formControlName="password" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" class="form-control" formControlName="conPassword" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <label for="username">User Name:</label>
+        <input type="password" class="form-control" formControlName="userName"  placeholder="Password" >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Phone Number:</label>
+        <input type="password" class="form-control" formControlName="phoneNum" placeholder="Password">
+      </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" formControlName="agree">
+      <label class="form-check-label" for="agree">click to agree</label>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="reactForm.invalid">Submit</button>
+  </form>
+</div>

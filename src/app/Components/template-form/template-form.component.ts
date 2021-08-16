@@ -10,6 +10,8 @@ export class TemplateFormComponent implements OnInit {
 hero : Hero={
 name:""
 };
+
+name !: string;
   constructor() { }
 
   ngOnInit(): void {
